@@ -6,7 +6,8 @@
 import scrapy
 
 
-class MlbItem(scrapy.Item):
+class MlbTeam(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    players = scrapy.Field()
+
