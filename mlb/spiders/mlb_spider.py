@@ -4,7 +4,7 @@ import scrapy
 class MlbSpiderSpider(scrapy.Spider):
     name = "mlb_spider"
     allowed_domains = ["www.mlb.com"]
-    start_urls = ["https://www.mlb.com/redsox/roster"]
+    start_urls = ["https://www.mlb.com/redsox/roster", "https://www.mlb.com/rays/roster"]
 
     def parse(self, response):
         yield {
