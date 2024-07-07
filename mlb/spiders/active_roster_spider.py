@@ -1,4 +1,5 @@
 import scrapy
+from ..items import MlbTeam
 
 
 class MLBTeamsSpider(scrapy.Spider):
@@ -39,7 +40,7 @@ class MLBTeamsSpider(scrapy.Spider):
     start_urls = [f"https://www.mlb.com/{team}/roster" for team in teams]
 
     def parse(self, response):
-        yield {
-            "name": response.url.split("/")[-2],
-            "players": response.css("td.info a::text").getall(),
-        }
+        mlb_team = MlbTeam()
+        mlb_team["name"] = response.url.split("/")[-2]
+        mlb_team["players"] = response.css("td.info a::text").getall()
+        yield mlb_team
