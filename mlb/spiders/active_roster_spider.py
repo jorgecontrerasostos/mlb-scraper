@@ -2,7 +2,7 @@ import scrapy
 
 
 class MLBTeamsSpider(scrapy.Spider):
-    name = "mlb_spider"
+    name = "active_roster_spider.py"
     allowed_domains = ["www.mlb.com"]
     teams: [str] = [
         "redsox",
